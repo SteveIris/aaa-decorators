@@ -11,14 +11,14 @@ import sys
 sys.stdout.write('Hello, my friend!')
 
 
-# Это метод объектов file-like классов, то есть классов, которые реализуют семантику "Меня можно создать, из меня можно прочитать и в меня можно записать".
+# Это метод объектов file-like классов, то есть классов, которые реализуют семантику Меня можно создать, из меня можно прочитать и в меня можно записать'.
 #
 # Самый главный пример такого объекта -- объект `file`, являющийся результатом вызова фукнции `open()`. Для простоты и универсальности взаимодействия, стандартный ввод и стандартный вывод тоже являются файлами, из которых можно читать и в которые можно писать.
 
 # In[21]:
 
 
-output = open("./some_test_data.txt", 'w')
+output = open('./some_test_data.txt', 'w')
 
 
 # In[22]:
@@ -48,7 +48,7 @@ original_write = sys.stdout.write
 def my_write(string_text):
     if string_text != '\n':
         current_time = datetime.datetime.now()
-        str_date_time = current_time.strftime("%d-%m-%Y, %H:%M:%S")
+        str_date_time = current_time.strftime('%d-%m-%Y, %H:%M:%S')
         original_write('[' + str_date_time + ']: ' + string_text + '\n')
 
 
@@ -83,7 +83,7 @@ sys.stdout.write = original_write
 def timed_output(function):
     def wrapper(*args, **kwargs):
         current_time = datetime.datetime.now()
-        str_date_time = current_time.strftime("%d-%m-%Y, %H:%M:%S")
+        str_date_time = current_time.strftime('%d-%m-%Y, %H:%M:%S')
         sys.stdout.write('[' + str_date_time + ']: ')
         function(*args, **kwargs)
 
@@ -101,7 +101,7 @@ def print_greeting(name):
 # In[10]:
 
 
-print_greeting("Nikita")
+print_greeting('Nikita')
 
 
 # Вывод должен быть похож на следующий:
